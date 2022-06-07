@@ -1,6 +1,5 @@
 #include <cstdlib>
 #include <random>
-#include <pthread.h>
 #include <thread>
 
 #include "sphere.h"
