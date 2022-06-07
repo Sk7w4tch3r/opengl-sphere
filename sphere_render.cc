@@ -100,7 +100,7 @@ void SphereRender::display()
 
     // regular points
     glPushMatrix();
-    glColor3d(1, 1, 1);
+    glColor3d(0, 0, 1);
     glTranslated(posX, posY, posZ);
     glRotated(angle, 1.0f, 1.0f, 1.0f);
     sphereRender.drawRegularPoints();
