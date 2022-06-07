@@ -62,6 +62,8 @@ void Sphere::multiThreadGenerateRandomPoints()
     for (int unsigned k = 0; k < n_threads; k++)
     {
         threads.push_back(thread(generateRandomPoints, std::ref(*this)));
+    }
+    for (int unsigned k = 0; k < n_threads; k++) {
         threads[k].join();
     }
 }
@@ -76,6 +78,8 @@ void Sphere::multiThreadGenerateRegularPoints()
     for (int unsigned k = 0; k < n_threads; k++)
     {
         threads.push_back(thread(generateRegularPoints, std::ref(*this)));
+    }
+    for (int unsigned k = 0; k < n_threads; k++) {
         threads[k].join();
     }
 }
