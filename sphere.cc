@@ -35,11 +35,15 @@ void Sphere::generateRegularPoints(Sphere &sphere, size_t start, size_t end)
   float d_v = M_PI / M_v;
   float d_phi = a / d_v;
 
-  size_t i = start;
+  size_t i = 0;
   for (int m = 0; m < M_v; m++) {
     float v = M_PI * (m + 0.5) / M_v;
     float m_phi = round(2 * M_PI * sin(v) / d_phi);
-    for (int n = 0; n < m_phi && i < end; n++) {
+    for (int n = 0; n < m_phi; n++) {
+      if(i < start || i >= end) {
+        ++i;
+        continue;
+      }
       float phi = 2 * M_PI * n / m_phi;
       float x = RADIUS * sin(v) * cos(phi);
       float y = RADIUS * sin(v) * sin(phi);
