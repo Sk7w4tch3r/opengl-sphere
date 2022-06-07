@@ -33,8 +33,8 @@ public:
     void multiThreadGenerateRegularPoints();
 
 private:
-    static void generateRandomPoints(Sphere &);
-    static void generateRegularPoints(Sphere &);
+    static void generateRandomPoints(Sphere &, size_t start, size_t end);
+    static void generateRegularPoints(Sphere &, size_t start, size_t end);
 };
 
 #endif
